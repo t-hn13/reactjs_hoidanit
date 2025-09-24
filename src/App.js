@@ -1,7 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const btnAdd = () => {
+    setCount(count + 1);
+  };
+  const btnMinus = () => {
+    setCount(count - 1);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +25,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>Count: {count}</p>
+        <button onClick={btnAdd}>Count++</button>
+        <button onClick={btnMinus}>Count--</button>
       </header>
     </div>
   );
